@@ -14,6 +14,7 @@ def display_results(member, view)
       p.gender, p.birthday.strftime("%-m/%-d/%Y"), p.favorite_color
   end
 
+
   horiz()
 
 end

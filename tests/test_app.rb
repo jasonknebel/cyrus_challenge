@@ -11,6 +11,7 @@ class TestApp < Test::Unit::TestCase
 
   def test_birthday_helper
     assert_equal( '2/5/2013' , birthday_helper('02/05/2013').strftime('%-m/%-d/%Y') )
+    assert_equal( '5/2/2013' , birthday_helper('05-2-2013').strftime('%-m/%-d/%Y') )
   end
 
   def test_sort_output1

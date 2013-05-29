@@ -1,19 +1,15 @@
-def import_members(file_name, regex)
+def import_members(file_name, col_sep, order)
 
   path = 'input_data/' + file_name
 
-  File.open(path).each do |line|
-    data = line.match(regex)
-
-    gender = gender_helper(data[:gender])
-    birthday = birthday_helper(data[:birthday])
+  CSV.foreach(path, col_sep: col_sep) do |line|
 
     @members << Person.new(
-      first_name: data[:first],
-      last_name: data[:last],
-      gender: gender, 
-      birthday: birthday,
-      favorite_color: data[:color]
+      first_name: line[order[0]],
+      last_name: line[order[1]],
+      gender: gender_helper(line[order[2]]), 
+      birthday: birthday_helper(line[order[3]]),
+      favorite_color: line[order[4]]
     )
 
   end
@@ -38,9 +34,10 @@ def gender_helper(gender)
 end
 
 
-def birthday_helper(birthday)
-
-  data = birthday.match(@dob_regex)
-  birthday = DateTime.new(data[:year].to_i, data[:month].to_i, data[:day].to_i)
-
+def birthday_helper(dob)
+    begin
+      birthday =  Date.strptime(dob, '%m-%d-%Y')
+    rescue 
+      birthday = Date.strptime(dob, '%m/%d/%Y')
+    end
 end
