@@ -14,20 +14,20 @@ class TestApp < Test::Unit::TestCase
     assert_equal( '5/2/2013' , birthday_helper('05-2-2013').strftime('%-m/%-d/%Y') )
   end
 
-  def test_sort_output1
-    desired_output = ["Martina", "Sue", "Anna", "Monica", "Neil", "Timothy", "Radek", "Francis", "Steve"]
-    assert_equal(desired_output, sort_output1(@members).map(&:first_name))
-  end
+  # def test_sort_output1
+  #   desired_output = ["Martina", "Sue", "Anna", "Monica", "Neil", "Timothy", "Radek", "Francis", "Steve"]
+  #   assert_equal(desired_output, sort_output1(@members).map(&:first_name))
+  # end
 
-  def test_sort_output2
-    desired_output = ["Neil", "Sue", "Timothy", "Monica", "Radek", "Francis", "Anna", "Martina", "Steve"]
-    assert_equal(desired_output, sort_output2(@members).map(&:first_name))
-  end
+  # def test_sort_output2
+  #   desired_output = ["Neil", "Sue", "Timothy", "Monica", "Radek", "Francis", "Anna", "Martina", "Steve"]
+  #   assert_equal(desired_output, sort_output2(@members).map(&:first_name))
+  # end
 
-  def test_sort_output3
-    desired_output = ["Steve", "Monica", "Anna", "Sue", "Martina", "Francis", "Radek", "Timothy", "Neil"]
-    assert_equal(desired_output, sort_output3(@members).map(&:first_name))
-  end
+  # def test_sort_output3
+  #   desired_output = ["Steve", "Monica", "Anna", "Sue", "Martina", "Francis", "Radek", "Timothy", "Neil"]
+  #   assert_equal(desired_output, sort_output3(@members).map(&:first_name))
+  # end
 
 
   def setup

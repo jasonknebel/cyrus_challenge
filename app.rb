@@ -1,5 +1,5 @@
 require_relative 'helpers/init.rb'
-require_relative 'model.rb'
+require_relative 'models/init.rb'
 require 'date'
 require 'CSV'
 
