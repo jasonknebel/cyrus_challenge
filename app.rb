@@ -13,19 +13,18 @@ outputs=[]
 
 # Output 1 – sorted by gender (females before males) 
 #   then by last name ascending
-outputs << sort_output1(@members)
+outputs << @members.sort_by{|p| [p.gender, p.last_name] }
 
 # # Output 2 – sorted by birth date, ascending.
-outputs << sort_output2(@members)
+outputs << @members.sort_by{|p| [p.birthday, p.last_name] }
 
 # # Output 3 – sorted by last name, descending.
-outputs << sort_output3(@members)
+outputs << @members.sort_by(&:last_name).reverse
 
 # #Display stored data
 # display_results(@members, 0)
-
-# # display_results(output1, 1)
-# # display_results(output2, 2)
-# # display_results(output3, 3)
+# display_results(output1, 1)
+# display_results(output2, 2)
+# display_results(output3, 3)
 
 export_results(outputs)
