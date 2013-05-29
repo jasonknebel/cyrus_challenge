@@ -5,9 +5,13 @@ require 'CSV'
 
 @members = []
 
-import_members('pipe.txt', ' | ', [ 1, 0, 3, 5, 4])
-import_members('comma.txt', ', ', [ 1, 0, 2, 4, 3])
-import_members('space.txt', ' ', [ 1, 0, 3, 4, 5])
+import_members('pipe.txt', ' | ', { 
+  first_name: 1, last_name: 0, gender: 3, birthday: 5, favorite_color: 4})
+import_members('comma.txt', ', ', { 
+  first_name: 1, last_name: 0, gender: 2, birthday: 4, favorite_color: 3})
+import_members('space.txt', ' ', { 
+  first_name: 1, last_name: 0, gender: 3, birthday: 4, favorite_color: 5})
+
 
 outputs=[]
 

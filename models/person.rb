@@ -11,7 +11,6 @@ class Person
 
   end
 
-
   private
 
   def parse_gender(gender)
@@ -25,12 +24,9 @@ class Person
     end
   end
 
-
   def parse_birthday(dob)
       dob.gsub!('/', '-')
       birthday =  Date.strptime(dob, '%m-%d-%Y')
   end
-
-
 
 end
