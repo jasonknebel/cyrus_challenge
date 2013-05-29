@@ -31,11 +31,6 @@ class TestApp < Test::Unit::TestCase
 
 
   def setup
-    @dob_regex = /^
-      (?<month>\d+)\D
-      (?<day>\d+)\D
-      (?<year>\d+)
-    $/x
 
     @members = []
     def addMember(last_name, first_name, gender, birthday, favorite_color)
