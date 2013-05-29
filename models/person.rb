@@ -27,11 +27,8 @@ class Person
 
 
   def parse_birthday(dob)
-      begin
-        birthday =  Date.strptime(dob, '%m-%d-%Y')
-      rescue 
-        birthday = Date.strptime(dob, '%m/%d/%Y')
-      end
+      dob.gsub!('/', '-')
+      birthday =  Date.strptime(dob, '%m-%d-%Y')
   end
 
 
