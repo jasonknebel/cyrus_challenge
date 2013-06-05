@@ -25,10 +25,5 @@ outputs << @members.sort_by{|p| [p.birthday, p.last_name] }
 # # Output 3 – sorted by last name, descending.
 outputs << @members.sort_by(&:last_name).reverse
 
-# #Display stored data
-# display_results(@members, 0)
-# display_results(output1, 1)
-# display_results(output2, 2)
-# display_results(output3, 3)
 
 export_results(outputs)

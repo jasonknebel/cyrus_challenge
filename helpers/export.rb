@@ -1,33 +1,3 @@
-def display_results(member, view)
-
-  puts ''
-  output = "| %11s | %7s | %6s | %10s | %7s |\n"
-  
-  puts (view == 0) ? 'Stored Data' : 'Output ' + view.to_s
-
-  horiz()
-  printf output, 'Last Name', 'F. Name', 'Gender', 'Birthday', 'F.Color'
-  horiz()
-
-  member.each do |p|
-    printf output, p.last_name, p.first_name, 
-      p.gender, p.birthday.strftime("%-m/%-d/%Y"), p.favorite_color
-  end
-
-
-  horiz()
-
-end
-
-
-def horiz()
-
-  57.times { printf "-" }
-  printf "\n"
-
-end
-
-
 def export_results(outputs)
   File.open( "output.txt" , 'w') do |f|
   
