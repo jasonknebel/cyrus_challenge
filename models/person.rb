@@ -1,6 +1,5 @@
 class Person
-  attr_accessor :first_name, :last_name, :gender,
-    :birthday, :favorite_color
+  attr_accessor :first_name, :last_name, :gender, :birthday, :favorite_color
 
   def initialize(params)
     @first_name = params[:first_name]

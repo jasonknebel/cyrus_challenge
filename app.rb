@@ -12,9 +12,7 @@ parse_members('comma.txt', ', ', {
 parse_members('space.txt', ' ', { 
   first_name: 1, last_name: 0, gender: 3, birthday: 4, favorite_color: 5})
 
-
 outputs=[]
-
 # Output 1 – sorted by gender (females before males) 
 # then by last name ascending
 outputs << @members.sort_by{|p| [p.gender, p.last_name] }
@@ -24,6 +22,5 @@ outputs << @members.sort_by{|p| [p.birthday, p.last_name] }
 
 # Output 3 – sorted by last name, descending.
 outputs << @members.sort_by(&:last_name).reverse
-
 
 export_results(outputs)

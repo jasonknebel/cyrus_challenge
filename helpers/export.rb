@@ -13,12 +13,9 @@ def export_results(outputs)
   end
 end
 
-
 def print_member(p, file)
-
   file.write "\n"
   person_info = "#{p.last_name} #{p.first_name} #{p.gender} "
   person_info += "#{p.birthday.strftime('%-m/%-d/%Y')} #{p.favorite_color}"
   file.write person_info
-
 end
